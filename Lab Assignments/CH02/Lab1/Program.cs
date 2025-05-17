@@ -10,4 +10,4 @@ double miles = Convert.ToDouble(input);
 
 double kilometers = miles * KM_PER_MILE;
 
-Console.WriteLine("There are {0} miles in {1} kilometers", miles, kilometers);
+Console.WriteLine("There are {0} miles in {1} kilometers", miles, kilometers.ToString("F");

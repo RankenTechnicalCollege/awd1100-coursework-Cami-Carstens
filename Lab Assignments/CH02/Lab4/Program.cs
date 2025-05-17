@@ -1,13 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-const double KM_PER_MILE = 1.6;
+const double DAILY_RATE = 100.00;
+const double MILE_RATE = 0.50;
 
-Console.Write("Please enter distance in miles: ");
+Console.WriteLine("How many days have you been traveling?");
+int days = Convert.ToInt32(Console.ReadLine());
 
-string input = Console.ReadLine();
+Console.WriteLine("How many miles have you traveled?");
+double miles = Convert.ToDouble(Console.ReadLine());
 
-double miles = Convert.ToDouble(input);
+double total = (days * DAILY_RATE) + (miles * MILE_RATE);
 
-double kilometers = miles * KM_PER_MILE;
+Console.WriteLine("You total rental fee is: {0}", total.ToString("F"));
 
-Console.WriteLine("There are {0} miles in {1} kilometers", miles, kilometers);
