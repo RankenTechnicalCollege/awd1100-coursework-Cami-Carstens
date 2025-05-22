@@ -10,6 +10,5 @@ Console.WriteLine("How many miles have you traveled?");
 double miles = Convert.ToDouble(Console.ReadLine());
 
 double total = (days * DAILY_RATE) + (miles * MILE_RATE);
-
 Console.WriteLine("You total rental fee is: {0}", total.ToString("F"));
 

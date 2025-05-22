@@ -2,7 +2,7 @@
 
 const double KM_PER_MILE = 1.6;
 
-Console.Write("Please enter distance in miles: ");
+Console.WriteLine("Please enter distance in miles: ");
 
 string input = Console.ReadLine();
 
