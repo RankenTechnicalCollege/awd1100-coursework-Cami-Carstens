@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIcontrols.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <!-- Multi line text input-->
+            <Label Text="Multi-Line Input:" />
+            <Editor Placeholder="Enter your comments here" AutoSize="TextChanges" />
+            
+            <!-- Displays Image-->
+            <Label Text="Sample Image:" />
+            <Image Source="dotnet_bot.png" HeightRequest="100" WidthRequest="100" />
+
+            <!--Checkbox: Boolean -->
+            <HorizontalStackLayout>
+                <CheckBox x:Name="chkAgree" />
+                <Label Text="I agree to the terms" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Radio Buttons Selection-->
+            <Label Text="Choose a color:" />
+            <VerticalStackLayout>
+                <RadioButton Content="Red" GroupName="Colors" />
+                <RadioButton Content="Green" GroupName="Colors" />
+                <RadioButton Content="Blue" GroupName="Colors" />
+            </VerticalStackLayout>
+
+            
+            
+            <HorizontalStackLayout>
+                <Label Text="Enable Notifications" VerticalOptions="Center" />
+                <Switch x:Name="switchNotifications" />
+            </HorizontalStackLayout>
+
+            
+            <!-- Slider-->
+            <Label Text="Volume:" />
+            <Slider Minimum="0" Maximum="100" Value="50" />
+
+            
+            <!-- Stepper-->
+            <Label Text="Quantity:" />
+            <Stepper Minimum="10" Increment="1" Value="1" />
+
+            
+            <!--To select a date -->
+            <Label Text="Select a date:" />
+            <DatePicker />
+
+            <!--To Select a time-->
+            <Label Text="Select a time:" />
+            <TimePicker />
+            
+            <!-- Drop down list for single selection-->
+            <Label Text="Select a fruit:" />
+            <Picker>
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x: String}" >
+                        <x:String>Apple</x:String>
+                        <x:String>Banana</x:String>
+                        <x:String>Orange</x:String>
+                     </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+          <!-- Search Bar-->
+            <Label Text="Search:" />
+            <SearchBar Placeholder="Type to search..." />
+            
+          <!-- Progress Bar-->
+            <Label Text="Loading progress:" />
+            <ProgressBar Progress="0.25" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
