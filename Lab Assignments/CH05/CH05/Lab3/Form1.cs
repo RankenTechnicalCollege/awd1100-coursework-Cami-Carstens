@@ -13,7 +13,7 @@ namespace Lab3
     public partial class Form1 : Form
     {
         Random randGenerator = new Random();
-        int roundCountStarts = 1;
+        int roundCountStarts = 0;
         int playerWins = 0;
         int computerWins = 0;
         public Form1()
@@ -27,50 +27,49 @@ namespace Lab3
          
             if (playerChoice == computerChoice)
             {
-                lblFinalScoreResult.Text = $"It's a tie!";
+                lblGameRoundResult.Text = $"It's a tie!";
             }
             else if (playerChoice == 1 && computerChoice == 3)
             {
-                lblFinalScoreResult.Text = $"You win this round!";
+                lblGameRoundResult.Text = $"You win this round!";
                 playerWins++;
             }
             else if (playerChoice == 2 && computerChoice == 1)
             {
-                lblFinalScoreResult.Text = $"You win this round!";
+                lblGameRoundResult.Text = $"You win this round!";
                 playerWins++;
             }
             else if (playerChoice == 3 && computerChoice == 2)
             {
-                lblFinalScoreResult.Text = $"You win this round!";
+                lblGameRoundResult.Text = $"You win this round!";
                 playerWins++;
             }
             else
             {
-                lblFinalScoreResult.Text = $"Computer wins this round!";
+                lblGameRoundResult.Text = $"Computer wins this round!";
                 computerWins++;
             }
 
             roundCountStarts++;
+
             lblCurrentScore.Text = $"Your player score: {playerWins}  Computer score: {computerWins}";
 
-            if(roundCountStarts == 3) 
+            if (roundCountStarts == 3)
+            {
 
-              if (playerWins > computerWins)
-                 {
-                    lblFinalScoreResult.Text = $"Player Wins!!";
-                 }
-            else if (computerWins > playerWins)
+                if (playerWins > computerWins)
                 {
-                    lblFinalScoreResult.Text = $"Computer Wins!!";
+                    lblFinalScoreResult.Text = $"Player Wins Final Rounds Score!!";
                 }
-            else
+                else if (computerWins > playerWins)
                 {
-                    lblFinalScoreResult.Text = $"It's a tie!!";
+                    lblFinalScoreResult.Text = $"Computer Wins Final Rounds Score!!";
                 }
-
-                
-
-                
+                else
+                {
+                    lblFinalScoreResult.Text = $"Final Rounds Score ended in a tie!!";
+                }
+            }       
 
             
         }

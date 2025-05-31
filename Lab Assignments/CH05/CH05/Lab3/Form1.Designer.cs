@@ -36,6 +36,7 @@
             this.lblFinalScoreResult = new System.Windows.Forms.Label();
             this.lblCompResult = new System.Windows.Forms.Label();
             this.lblCurrentScore = new System.Windows.Forms.Label();
+            this.lblGameRoundResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +96,7 @@
             // lblFinalScoreResult
             // 
             this.lblFinalScoreResult.AutoSize = true;
-            this.lblFinalScoreResult.Location = new System.Drawing.Point(174, 303);
+            this.lblFinalScoreResult.Location = new System.Drawing.Point(174, 371);
             this.lblFinalScoreResult.Name = "lblFinalScoreResult";
             this.lblFinalScoreResult.Size = new System.Drawing.Size(0, 16);
             this.lblFinalScoreResult.TabIndex = 5;
@@ -116,11 +117,20 @@
             this.lblCurrentScore.Size = new System.Drawing.Size(0, 16);
             this.lblCurrentScore.TabIndex = 7;
             // 
+            // lblGameRoundResult
+            // 
+            this.lblGameRoundResult.AutoSize = true;
+            this.lblGameRoundResult.Location = new System.Drawing.Point(177, 305);
+            this.lblGameRoundResult.Name = "lblGameRoundResult";
+            this.lblGameRoundResult.Size = new System.Drawing.Size(0, 16);
+            this.lblGameRoundResult.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblGameRoundResult);
             this.Controls.Add(this.lblCurrentScore);
             this.Controls.Add(this.lblCompResult);
             this.Controls.Add(this.lblFinalScoreResult);
@@ -146,6 +156,7 @@
         private System.Windows.Forms.Label lblFinalScoreResult;
         private System.Windows.Forms.Label lblCompResult;
         private System.Windows.Forms.Label lblCurrentScore;
+        private System.Windows.Forms.Label lblGameRoundResult;
     }
 }
 
