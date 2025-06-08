@@ -52,69 +52,80 @@ namespace Lab1
 
             for (int i = 0; i < zipCodes.Length; i++)
             {
-                if (zipCodes[i] == "63101")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[0]:C}";
+                if (userZip == zipCodes[i]) 
+                { txtFeeResult.Text = $"{deliveryFee[i]:C}";
                     found = true;
                     break;
                 }
-                else if (zipCodes[i] == "63103")
+                if (!found)
                 {
-                    txtFeeResult.Text = $"{deliveryFee[1]:C}";
-                    found = true;
-                    break;
+                    txtFeeResult.Text = "Zip code not found.";
                 }
-                else if (zipCodes[i] == "63105")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[2]:C}";
-                    found = true;
-                    break;
-                }
-                else if (zipCodes[i] == "63109")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[3]:C}";
-                    found = true;
-                    break;
-                }
-                else if (zipCodes[i] == "63113")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[4]:C}";
-                    found = true;
-                    break;
-                }
-                else if(zipCodes[i] == "63118")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[5]:C}";
-                    found = true;
-                    break;
-                }
-                else if( zipCodes[i] == "63130")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[6]:C}";
-                    found = true;
-                    break;
-                }
-                else if(zipCodes[i] == "63133")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[7]:C}";
-                    found = true;
-                    break;
-                }
-                else if(zipCodes[i] == "63136") {
-                    txtFeeResult.Text = $"{deliveryFee[8]:C}";
-                    found = true;
-                    break;
-                }
-                else if (zipCodes[i] == "63137")
-                {
-                    txtFeeResult.Text = $"{deliveryFee[9]:C}";
-                    found = true;
-                    break;
-                }
-                else
-                {
-                    txtFeeResult.Text = $"Zip not found.";
-                }
+
+
+                //if (zipCodes[i] == "63101")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[0]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if (zipCodes[i] == "63103")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[1]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if (zipCodes[i] == "63105")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[2]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if (zipCodes[i] == "63109")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[3]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if (zipCodes[i] == "63113")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[4]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if(zipCodes[i] == "63118")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[5]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if( zipCodes[i] == "63130")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[6]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if(zipCodes[i] == "63133")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[7]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if(zipCodes[i] == "63136") {
+                //    txtFeeResult.Text = $"{deliveryFee[8]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else if (zipCodes[i] == "63137")
+                //{
+                //    txtFeeResult.Text = $"{deliveryFee[9]:C}";
+                //    found = true;
+                //    break;
+                //}
+                //else
+                //{
+                //    txtFeeResult.Text = $"Zip not found.";
+                //}
             }
         }
     }
