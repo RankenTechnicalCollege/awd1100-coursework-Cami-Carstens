@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 //Mr Gundmestad I know this extra credit is not going to count. 
-//I messed with it for so long but never could get the table to line up right.
-
+//I messed with it for soooo long but never could get the table to line up right.
+//I would love to see how it's done. 
 
 
 
@@ -28,7 +28,7 @@ if (!int.TryParse(column, out int columns)
 Console.Write("|    |");
 
 for (int c = 1; c <= columns; c++)
-{
+{                   //var c, take up 3 on the left
     Console.Write($" {c,3} |");
 }
 
@@ -46,11 +46,11 @@ Console.WriteLine();
 
 //table
 for (int r = 1; r < rows; r++)
-{
+{                       //var r takes up 2 spaces
     Console.Write($"| {r,2} |");
 
     for (int c = 1; c <= columns; c++)
-    {
+    {                   //var r*c, takes up 3 spaces
         Console.Write($" {r * c,3}  |");
     }
 

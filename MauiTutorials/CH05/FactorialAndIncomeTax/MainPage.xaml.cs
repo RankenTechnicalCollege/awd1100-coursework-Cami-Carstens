@@ -1,6 +1,5 @@
 ﻿
 using System.Threading.Tasks;
-
 namespace FactorialAndIncomeTax
 {
     public partial class MainPage : ContentPage
