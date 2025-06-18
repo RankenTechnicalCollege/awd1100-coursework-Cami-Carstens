@@ -61,6 +61,7 @@ namespace Lab2
                         rate = nightlyRate[i];
                         break;
                     }
+
       
                 }
                 if (rate > 0)

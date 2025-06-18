@@ -38,7 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 51);
+            this.label1.Location = new System.Drawing.Point(258, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // txtNumberInput
             // 
-            this.txtNumberInput.Location = new System.Drawing.Point(27, 135);
+            this.txtNumberInput.Location = new System.Drawing.Point(187, 102);
             this.txtNumberInput.Name = "txtNumberInput";
             this.txtNumberInput.Size = new System.Drawing.Size(312, 22);
             this.txtNumberInput.TabIndex = 1;
@@ -55,9 +55,9 @@
             // 
             this.btnMask.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnMask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMask.Location = new System.Drawing.Point(442, 128);
+            this.btnMask.Location = new System.Drawing.Point(260, 172);
             this.btnMask.Name = "btnMask";
-            this.btnMask.Size = new System.Drawing.Size(142, 34);
+            this.btnMask.Size = new System.Drawing.Size(174, 53);
             this.btnMask.TabIndex = 2;
             this.btnMask.Text = "Mask";
             this.btnMask.UseVisualStyleBackColor = false;
