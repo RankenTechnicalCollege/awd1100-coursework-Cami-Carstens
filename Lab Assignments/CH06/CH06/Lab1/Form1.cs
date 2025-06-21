@@ -24,7 +24,7 @@ namespace Lab1
             fortune[3] = "The most obvious solution is not always the best.";
             fortune[4] = "If you want the rainbow, you will have to tolerate the rain.";
             fortune[5] = "The early bird gets the worm. but the second mouse gets the cheese.";
-            fortune[6] = "From listening comes wisdom and from repentance.";
+            fortune[6] = "From listening comes wisdom and from speaking repentance.";
             fortune[7] = "A smile is your personal welcome mat.";
         }
 
@@ -46,7 +46,7 @@ namespace Lab1
             }
             while (firstFortune == secondFortune);
 
-            lblResult1.Text = $"{firstFortune} \n \n {secondFortune}";
+            lblResult1.Text = $"{fortune [firstFortune]} \n \n {fortune [secondFortune]}";
         }
     }
 }

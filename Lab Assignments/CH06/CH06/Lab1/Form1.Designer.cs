@@ -39,7 +39,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(739, 80);
+            this.label1.Size = new System.Drawing.Size(803, 80);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fortune Cookie";
             // 
@@ -59,9 +59,10 @@
             // lblResult1
             // 
             this.lblResult1.AutoSize = true;
+            this.lblResult1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResult1.Location = new System.Drawing.Point(61, 270);
             this.lblResult1.Name = "lblResult1";
-            this.lblResult1.Size = new System.Drawing.Size(0, 16);
+            this.lblResult1.Size = new System.Drawing.Size(0, 25);
             this.lblResult1.TabIndex = 2;
             // 
             // Form1
