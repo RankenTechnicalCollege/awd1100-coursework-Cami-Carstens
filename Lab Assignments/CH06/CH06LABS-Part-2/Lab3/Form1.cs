@@ -32,28 +32,28 @@ namespace Lab3
                 return lblResult.Text = $"Invalid Bid";
             }
 
-            //need to remove unwanted text- maybe with cleaned?
-            string cleaned = bidString; //"clean" the entered string of text thats not needed
+            //need to remove unwanted text- maybe with cleaned phrase?
+            string cleanedBid = bidString; //"clean" the entered string of text thats not needed
 
             //if $ sign was entered maybe use .Contains to check?
-            if(cleaned.Contains("$")) //check if the cleaned phrase contain a $ sign
+            if(cleanedBid.Contains("$")) //check if the cleaned phrase contain a $ sign
             {
-                cleaned = cleaned.Replace("$", "");//make new cleaned phrase replace all $ signs
+                cleanedBid = cleanedBid.Replace("$", "");//make new cleaned phrase replace all $ signs
 
             }
-            if(cleaned.Contains("dollars"))//checks if input contains the word dollars
+            if(cleanedBid.Contains("dollars"))//checks if input contains the word dollars
             {
-                cleaned = cleaned.Replace("dollars", ""); //replace the word dollars, if entered 
+                cleanedBid = cleanedBid.Replace("dollars", ""); //replace the word dollars, if entered 
 
             }
             //new cleaned phrase without any extra spaces
-            cleaned = cleaned.Trim(); //get rid of extra spaces if entered
+            cleanedBid = cleanedBid.Trim(); //get rid of extra spaces if entered
 
             // now after everything is cleaned try to turn into an appliable number
             decimal bidAmount;
 
             //successful "cleaning", TryParse data into bidAmount
-            bool success = decimal.TryParse(cleaned, out bidAmount);
+            bool success = decimal.TryParse(cleanedBid, out bidAmount);
 
             //if true/successful
             if(success)
