@@ -64,10 +64,10 @@ namespace Lab1_
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string newTerm = txtNewTerm.Text.ToLower();
-            string newDefinition = txtNewDefinition.Text.ToLower();
+            string newTerm = txtNewTerm.Text;
+            string newDefinition = txtNewDefinition.Text;
 
-            if (flashCount >= 21)
+            if (flashCount == 20)
             {
                 lblResult.Text = "Flash Card limit has been reached.";
                 return;
