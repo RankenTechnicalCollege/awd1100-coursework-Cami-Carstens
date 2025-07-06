@@ -18,13 +18,15 @@ namespace Lab5
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+     
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             string description = txtDescription.Text;
             grpValueBox.Visible = true;
 
             //check for errors or invalid data
-            if (!float.TryParse(txtHours.Text, out float hours ) 
+            if (!float.TryParse(txtHours.Text, out float hours)
                 || hours < 0)
             {
                 lblResult.Text = "Invalid entry.";
@@ -47,6 +49,7 @@ namespace Lab5
             }
             lblResult.Text = $"Description:\n{currentJob.Description} \n\n Hours:\n {currentJob.HoursToComplete} \n\n Hourly Rate: \n{currentJob.HourlyFee:C}\n\n";
             txtTotalFee.Text = $"{currentJob.TotalFee:C}";
+
         }
     }
 }
