@@ -31,26 +31,9 @@ namespace Lab3
         {
             string accNumber = txtAccount.Text;
             string pin = txtPin.Text;
-            currentUser = null; // Reset before checking
+            
 
-            //class            //list items
-            foreach (Account acc in accountNumbers)
-            {
-                if(acc.GetAccountNumber() == accNumber && acc.GetPin() == pin)
-                {
-                   lblResult.Visible = true;
-                   currentUser = acc;
-                    lblResult.Text = $" Login successful!\n Welcome, { acc.GetName()} \n Your balance is: {acc.GetBalance():C}";
-                    return;
-                }
-
-            }
-            if (currentUser == null)
-            {
-                lblResult.Visible = true;
-                lblResult.Text = "Login failed!\n Please check your account number and PIN.";
-            }
-
+            Login(accNumber, pin);
 
 
         }
@@ -106,7 +89,8 @@ namespace Lab3
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            if(currentUser != null)
+            Logout();
+            if (currentUser != null)
             {
                
                 lblResult.Text = $"{currentUser.GetName()}\nYou have been logged out.";
@@ -118,10 +102,49 @@ namespace Lab3
                 txtDeposit.Clear();
                 txtWithdraw.Clear();
             }
+           
+        }
+
+        private void Login(string accountNumber, string pin)
+        {
+            currentUser = null; // Reset before checking
+
+            foreach (Account accNum in accountNumbers)
+            {
+                if (accNum.GetAccountNumber() == accountNumber && accNum.GetPin() == pin)
+                {
+                    currentUser = accNum;
+                    lblResult.Visible = true;
+                    lblResult.Text = $"Login successful!\nWelcome, {accNum.GetName()}!\nYour balance is: {accNum.GetBalance():C}";
+                    return;
+                }
+            }
+
+            // If no match found, logout any user just in case and show error
+            Logout();
+            lblResult.Visible = true;
+            lblResult.Text = "Login failed!\nPlease check your account number and PIN.";
+        }
+
+        private void Logout()
+        {
+            if (currentUser != null)
+            {
+                lblResult.Text = $"{currentUser.GetName()}\nYou have been logged out.";
+            }
             else
             {
                 lblResult.Text = "You are not logged in.";
             }
+
+            currentUser = null;
+
+            // Clear input fields
+            txtAccount.Clear();
+            txtPin.Clear();
+            txtDeposit.Clear();
+            txtWithdraw.Clear();
         }
+
     }
 }
