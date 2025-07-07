@@ -37,6 +37,7 @@
             this.txtWidth = new System.Windows.Forms.TextBox();
             this.txtLength = new System.Windows.Forms.TextBox();
             this.lblResult = new System.Windows.Forms.Label();
+            this.lblTotalResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -117,8 +118,17 @@
             this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResult.Location = new System.Drawing.Point(71, 206);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(530, 245);
+            this.lblResult.Size = new System.Drawing.Size(530, 197);
             this.lblResult.TabIndex = 8;
+            // 
+            // lblTotalResult
+            // 
+            this.lblTotalResult.AutoSize = true;
+            this.lblTotalResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalResult.Location = new System.Drawing.Point(75, 428);
+            this.lblTotalResult.Name = "lblTotalResult";
+            this.lblTotalResult.Size = new System.Drawing.Size(0, 22);
+            this.lblTotalResult.TabIndex = 9;
             // 
             // Form1
             // 
@@ -126,6 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(830, 474);
+            this.Controls.Add(this.lblTotalResult);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtLength);
             this.Controls.Add(this.txtWidth);
@@ -153,6 +164,7 @@
         private System.Windows.Forms.TextBox txtWidth;
         private System.Windows.Forms.TextBox txtLength;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblTotalResult;
     }
 }
 

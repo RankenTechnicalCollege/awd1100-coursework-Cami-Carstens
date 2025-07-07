@@ -21,6 +21,13 @@ namespace Lab6
         public Form1()
         {
             InitializeComponent();
+            rooms[0] = new Room("Living Room", 15, 20);
+            rooms[1] = new Room("Bedroom", 12, 14);
+            rooms[2] = new Room("Kitchen", 10, 12);
+            rooms[3] = new Room("Bathroom", 8, 10);
+            roomCount = 4;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,8 +56,15 @@ namespace Lab6
             rooms[roomCount] = newRoom; 
             roomCount++;
 
-            lblResult.Text = newRoom.ToString();
+            //print total boxes needed not just one room
+            int totalBoxes = 0;
+            for (int i = 0; i < roomCount; i++)
+            {
+                totalBoxes += rooms[i].Boxes;
+            }
 
+            lblResult.Text = newRoom.ToString();
+            lblTotalResult.Text = $"Total Boxes Needed for all rooms: {totalBoxes}";
 
 
 

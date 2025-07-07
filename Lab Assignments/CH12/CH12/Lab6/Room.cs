@@ -62,7 +62,11 @@ namespace Lab6
                 $"Width: {_width} ft\n\n" +
                 $"Length: {_length} ft\n\n" +
                 $"Area: {_area} sq ft\n\n" +
-                $"Boxes Needed: {_boxes}";
+                $"Boxes Needed: {_boxes}\n";
+         
+
+
+
         }
     }
 }

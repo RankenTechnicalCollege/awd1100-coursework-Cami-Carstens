@@ -13,6 +13,7 @@ namespace Lab5
         private float _hoursToComplete;
         private float _hourlyFee;
         private float _totalFee;
+        
 
         //constructor
         public Job(string description, float hoursToComplete, float hourlyFee)
@@ -35,6 +36,7 @@ namespace Lab5
         {
             get { return _hoursToComplete; }
             set { _hoursToComplete = value; }
+            
         }
         public float HourlyFee
         {
