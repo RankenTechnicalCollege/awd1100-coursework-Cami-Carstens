@@ -46,6 +46,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblResult2 = new System.Windows.Forms.Label();
             this.lblBeginEndSearch = new System.Windows.Forms.Label();
+            this.lblResult3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -209,15 +210,26 @@
             this.lblBeginEndSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBeginEndSearch.Location = new System.Drawing.Point(20, 385);
             this.lblBeginEndSearch.Name = "lblBeginEndSearch";
-            this.lblBeginEndSearch.Size = new System.Drawing.Size(841, 72);
+            this.lblBeginEndSearch.Size = new System.Drawing.Size(841, 217);
             this.lblBeginEndSearch.TabIndex = 17;
             this.lblBeginEndSearch.Visible = false;
+            // 
+            // lblResult3
+            // 
+            this.lblResult3.AutoSize = true;
+            this.lblResult3.BackColor = System.Drawing.Color.Snow;
+            this.lblResult3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult3.Location = new System.Drawing.Point(16, 176);
+            this.lblResult3.Name = "lblResult3";
+            this.lblResult3.Size = new System.Drawing.Size(0, 20);
+            this.lblResult3.TabIndex = 18;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 479);
+            this.ClientSize = new System.Drawing.Size(873, 604);
+            this.Controls.Add(this.lblResult3);
             this.Controls.Add(this.lblBeginEndSearch);
             this.Controls.Add(this.lblResult2);
             this.Controls.Add(this.btnSearch);
@@ -263,6 +275,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblResult2;
         private System.Windows.Forms.Label lblBeginEndSearch;
+        private System.Windows.Forms.Label lblResult3;
     }
 }
 

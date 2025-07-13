@@ -60,7 +60,9 @@ namespace LB2
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        { if(conferenceCount >= 20 )
+        {
+            lblResult.Text = "";
+            if(conferenceCount >= 20 )
             {
                 lblResult.Visible = true;
                 lblResult.Text = "Maximum number of conferences reached.";
@@ -77,6 +79,7 @@ namespace LB2
             {
                 lblResult.Visible = true;
                 lblResult2.Text = "";
+                lblResult3.Text = "";
                 lblResult.Text = "Please fill in all fields.";
                 return;
             }
@@ -141,7 +144,7 @@ namespace LB2
             conferenceCount++;
 
             lblResult.Visible = true;
-            lblResult.Text += newConference.Display();
+            lblResult3.Text += $"{newConference.Display()}\n Total Conferences: {conferenceCount}/20";
             lblResult2.Visible = true;
             lblResult2.Text = "Conference added successfully!";
 
