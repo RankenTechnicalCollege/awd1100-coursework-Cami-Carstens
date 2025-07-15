@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace LB2
             {
                 GroupName = "Future Leaders of Tech",
                 StartingDate = new DateTime(2025, 10, 1),
-                EndingDate = new DateTime(2025, 10, 3),
+  
                 Attendees = 100,
                 Room = Room.ROOM_101
             };
@@ -29,7 +30,7 @@ namespace LB2
             {
                 GroupName = "Manifest your dreams now",
                 StartingDate = new DateTime(2028, 11, 5),
-                EndingDate = new DateTime(2028, 11, 7),
+                
                 Attendees = 50,
                 Room = Room.ROOM_102
             };
@@ -37,7 +38,7 @@ namespace LB2
             {
                 GroupName = "Education is Power",
                 StartingDate = new DateTime(2026, 12, 10),
-                EndingDate = new DateTime(2026, 12, 15),
+                
                 Attendees = 75,
                 Room = Room.ROOM_201
             };
@@ -45,7 +46,7 @@ namespace LB2
             {
                 GroupName = "Business-Taking you to the next level",
                 StartingDate = new DateTime(2025, 1, 15),
-                EndingDate = new DateTime(2025, 1, 16),
+                
                 Attendees = 120,
                 Room = Room.ROOM_202
             };
@@ -53,7 +54,7 @@ namespace LB2
             {
                 GroupName = "Astrophysicist for everyday people",
                 StartingDate = new DateTime(2027, 2, 20),
-                EndingDate = new DateTime(2027, 2, 27),
+                
                 Attendees = 80,
                 Room = Room.ROOM_301
             };
@@ -62,7 +63,7 @@ namespace LB2
         private void btnAdd_Click(object sender, EventArgs e)
         {
             lblResult.Text = "";
-            if(conferenceCount >= 20 )
+            if (conferenceCount >= 20)
             {
                 lblResult.Visible = true;
                 lblResult.Text = "Maximum number of conferences reached.";
@@ -71,10 +72,11 @@ namespace LB2
 
             string groupName = txtGroupName.Text;
             string StartingDate = txtStartingDate.Text;
+            string endingDate = txtEndSearch.Text;
             string room = txtRoom.Text;
 
-            if(string.IsNullOrEmpty(groupName) 
-                || string.IsNullOrEmpty(StartingDate) 
+            if (string.IsNullOrEmpty(groupName)
+                || string.IsNullOrEmpty(StartingDate)
                 || string.IsNullOrEmpty(room))
             {
                 lblResult.Visible = true;
@@ -108,7 +110,7 @@ namespace LB2
             switch (room.ToLower())
             {
                 case "101":
-                     aRoom = Room.ROOM_101;
+                    aRoom = Room.ROOM_101;
                     break;
                 case "102":
                     aRoom = Room.ROOM_102;
@@ -122,7 +124,7 @@ namespace LB2
                 case "301":
                     aRoom = Room.ROOM_301;
                     break;
-                 case "302":
+                case "302":
                     aRoom = Room.ROOM_302;
                     break;
                 default:
@@ -132,19 +134,22 @@ namespace LB2
             }
 
             //after validation, create a new conference object
-            Conference newConference = new Conference {
+            Conference newConference = new Conference
+            {
                 GroupName = groupName,
                 StartingDate = startingDate,
+               
                 Attendees = attendees,
                 Room = aRoom
             };
-            
+
 
             conferenceName[conferenceCount] = newConference;
             conferenceCount++;
 
             lblResult.Visible = true;
-            lblResult3.Text += $"{newConference.Display()}\n Total Conferences: {conferenceCount}/20";
+            lblResult3.Text += $"Total Conferences: {conferenceCount}/20 \n";
+            lblResult3.Text += $"Total Attendees: {CalculateTotalAttendees()}";
             lblResult2.Visible = true;
             lblResult2.Text = "Conference added successfully!";
 
@@ -153,11 +158,11 @@ namespace LB2
             txtStartingDate.Clear();
             txtAttendees.Clear();
             txtRoom.Clear();
-          
+
 
             txtGroupName.Focus();
 
-
+            
 
 
         }
@@ -165,11 +170,11 @@ namespace LB2
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lblBeginEndSearch.Text = string.Empty;
-           
+
 
             bool foundBeginDate = DateTime.TryParse(txtBeginSearch.Text, out DateTime beginSearch);
             bool foundEndDate = DateTime.TryParse(txtEndSearch.Text, out DateTime endSearch);
-  
+
             if (!foundBeginDate || !foundEndDate)
             {
                 lblBeginEndSearch.Visible = true;
@@ -177,17 +182,20 @@ namespace LB2
                 return;
             }
             bool found = false;
+            int matchingConferences = 0;
             for (int i = 0; i < conferenceCount; i++)
             {
                 Conference conf = conferenceName[i];
-               
+
                 // check if the date matches
-                if (conf.StartingDate <= endSearch.Date
-                    && conf.EndingDate >= beginSearch.Date)
+                if (conf.StartingDate >= beginSearch.Date
+                    && conf.StartingDate <= endSearch.Date)
+                   
                 {
 
                     lblBeginEndSearch.Visible = true;
                     lblBeginEndSearch.Text += conf.Display() + "\n";
+                    matchingConferences += conf.Attendees;
                     found = true;
                 }
 
@@ -198,6 +206,19 @@ namespace LB2
                 lblBeginEndSearch.Text = "No conference found with that name or date.";
             }
 
+
+        }
+
+        //get total attendees using a method
+        private int CalculateTotalAttendees()
+        {
+            int totalAttendees = 0;
+            for (int i = 0; i < conferenceCount; i++)
+            {
+                totalAttendees += conferenceName[i].Attendees;
+            }
+            return totalAttendees;
         }
     }
 }
+    
