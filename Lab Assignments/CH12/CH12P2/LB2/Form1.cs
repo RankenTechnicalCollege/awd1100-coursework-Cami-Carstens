@@ -148,8 +148,8 @@ namespace LB2
             conferenceCount++;
 
             lblResult.Visible = true;
-            lblResult3.Text += $"Total Conferences: {conferenceCount}/20 \n";
-            lblResult3.Text += $"Total Attendees: {CalculateTotalAttendees()}";
+            lblResult3.Text = $"Total Conferences: {conferenceCount}/20 \n"+
+             $"Total Attendees: {CalculateTotalAttendees()}";
             lblResult2.Visible = true;
             lblResult2.Text = "Conference added successfully!";
 
