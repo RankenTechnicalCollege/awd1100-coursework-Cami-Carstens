@@ -34,12 +34,15 @@ namespace LB3
             label.ForeColor = _forecolor; // Set the foreground color of the label
         }
 
-        public int CompareTo(ICard other)
+        public int CompareTo(ICard card)
         {
 
-            if (other == null)
-             return 1;
-            return _value.CompareTo(other.Value); // Compare based on value
+            if (Value > card.Value)
+                return 1; // This card is greater
+            else if (Value < card.Value)
+                return -1; // This card is lesser
+            else
+                return 0; // They are equal
         }
         // Properties
         public string Name

@@ -96,19 +96,21 @@ namespace LB3
                 int index = numGen.Next(pokemonNames.Length);
                 string name = pokemonNames[index];
                 Image image = pokemonImages[index];
-                double value = numGen.Next(1, 101);
+               
                 // 20% chance of shiny card
                 ICard card;
 
                 if (shinyCount < 2 && numGen.NextDouble() < 0.2)
                 {
+                    double value = numGen.Next(50, 100);
                     // Create a shiny card
-                    card = new ShinyCard(name, image, value, new Font("Arial", 14, FontStyle.Bold), Color.Gold, Color.DarkBlue);
+                    card = new ShinyCard(name, image, value, new Font("Cursive", 16, FontStyle.Bold), Color.Gold, Color.DarkBlue);
                     shinyCount++;
                 }
 
                 else
                 {
+                    double value = numGen.Next(1, 51);
                     // Create a normal card
                     card = new NormalCard(name, image, value);
                 }

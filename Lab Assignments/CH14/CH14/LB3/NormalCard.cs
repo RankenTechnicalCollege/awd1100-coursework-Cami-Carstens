@@ -27,14 +27,20 @@ namespace LB3
         {
             picture.Image = _image; // Set the image of the card
             label.Text = _name; // Set the name of the card
+            label.BackColor = System.Drawing.Color.Transparent;
+            label.ForeColor = System.Drawing.Color.Black; // Set the text color of the label
+            label.Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Regular); // Set the font of the label
         }
         // Method to compare cards based on their value
-        public int CompareTo(ICard other)
+        public int CompareTo(ICard card)
         {
 
-            if (other == null)
-                return 1;
-            return this.Value.CompareTo(other.Value);
+            if(Value > card.Value)
+                return 1; // This card is greater
+            else if (Value < card.Value)
+                return -1; // This card is lesser
+            else
+                return 0; // They are equal
         }
         //Properties
         public string Name
