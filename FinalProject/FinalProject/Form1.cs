@@ -74,7 +74,7 @@ namespace FinalProject
                 MessageBox.Show("Book added successfully!");
 
                 //count the number of new books added
-                newBooksAdded++;
+                //newBooksAdded++;
             }
             catch (Exception ex)
             {
@@ -193,12 +193,7 @@ namespace FinalProject
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             //List<Book> selectedBooks = new List<Book>();
-            if (cboBookSelection.SelectedItem is Book selectedBook)
-            {
-                selectedBooks.Add(selectedBook);
-            }
-
-
+        
             if (selectedBooks.Any())
             {
                 decimal totalPrice = selectedBooks.Sum(b => b.Price);
